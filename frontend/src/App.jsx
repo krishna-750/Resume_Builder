@@ -6,7 +6,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
-
+import Dashboard from './components/Dashboard';
+import CreateResume from './components/CreateResume';
 const theme = createTheme({
   palette: {
     primary: {
@@ -28,6 +29,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/create-resume" element={<CreateResume />} />
         </Routes>
       </Router>
     </ThemeProvider>
