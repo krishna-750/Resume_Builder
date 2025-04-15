@@ -8,13 +8,183 @@ function Dashboard() {
 
   const templates = [
     {
-      
+      id: 1,
+      title: 'Professional Resume',
+      templateId: 'template1',
+      previewColor: '#1976d2', 
+      thumbnail: 'https://th.bing.com/th/id/OIP.Gxk53Yo_YegiXRkHPR7BnwHaE7?rs=1&pid=ImgDetMain', 
+      formData: {
+        personalInfo: {
+          name: 'John Doe',
+          email: 'john.doe@example.com',
+          phone: '(123) 456-7890',
+          links: [{ platform: 'LinkedIn', url: 'https://linkedin.com/in/johndoe' }],
+        },
+        education: [
+          {
+            institution: 'Example University',
+            location: 'City, Country',
+            degreeType: 'B.Sc. Computer Science',
+            startDate: '09/2018',
+            endDate: '06/2022',
+            scores: 'GPA: 3.8/4.0',
+          },
+        ],
+        experience: [
+          {
+            companyName: 'Tech Corp',
+            jobType: 'Software Engineer',
+            location: 'City, Country',
+            startDate: '07/2022',
+            endDate: 'Present',
+            description: 'Developed web applications using React and Node.js.',
+          },
+        ],
+        skills: {
+          languages: ['JavaScript', 'Python'],
+          frameworks: ['React', 'Node.js'],
+          tools: ['Git', 'VS Code'],
+          databases: ['MongoDB'],
+        },
+        projects: [
+          {
+            projectName: 'Portfolio Website',
+            technologies: 'React, MUI',
+            startDate: '01/2023',
+            endDate: '03/2023',
+            description: 'Built a personal portfolio to showcase projects.',
+            features: 'Responsive design, dark mode.',
+          },
+        ],
+        certificates: [
+          {
+            name: 'React Developer Certification',
+            link: 'https://example.com/cert',
+            issuedBy: 'Online Academy',
+          },
+        ],
+        template: 'template1', 
+      },
+
     },
     {
-      
+      id: 2,
+      title: 'Creative Resume',
+      templateId: 'template2',
+      previewColor: '#d81b60', 
+      thumbnail: 'https://th.bing.com/th/id/OIP.Qo0zF7VMkkz1n_acK7s_UwHaE8?rs=1&pid=ImgDetMain',
+      formData: {
+        personalInfo: {
+          name: 'Jane Smith',
+          email: 'jane.smith@example.com',
+          phone: '(987) 654-3210',
+          links: [{ platform: 'Portfolio', url: 'https://janesmith.art' }],
+        },
+        education: [
+          {
+            institution: 'Art Institute',
+            location: 'City, Country',
+            degreeType: 'B.A. Graphic Design',
+            startDate: '09/2017',
+            endDate: '06/2021',
+            scores: 'GPA: 3.9/4.0',
+          },
+        ],
+        experience: [
+          {
+            companyName: 'Design Studio',
+            jobType: 'Graphic Designer',
+            location: 'City, Country',
+            startDate: '08/2021',
+            endDate: 'Present',
+            description: 'Created branding materials and UI designs.',
+          },
+        ],
+        skills: {
+          languages: ['HTML', 'CSS'],
+          frameworks: ['Figma', 'Adobe XD'],
+          tools: ['Photoshop', 'Illustrator'],
+          databases: [],
+        },
+        projects: [
+          {
+            projectName: 'Branding Project',
+            technologies: 'Adobe Suite',
+            startDate: '02/2022',
+            endDate: '05/2022',
+            description: 'Designed a complete brand identity for a startup.',
+            features: 'Logo, business cards, website.',
+          },
+        ],
+        certificates: [
+          {
+            name: 'UI/UX Design Certification',
+            link: 'https://example.com/cert',
+            issuedBy: 'Design Academy',
+          },
+        ],
+        template: 'template2',
+      },
+
     },
     {
-     
+      id: 3,
+      title: 'Modern Resume',
+      templateId: 'template3',
+      previewColor: '#388e3c', 
+      thumbnail: 'https://th.bing.com/th/id/OIP.7psitIImHpZoEyVRnz8mGAHaHa?rs=1&pid=ImgDetMain',
+      formData: {
+        personalInfo: {
+          name: 'Alex Johnson',
+          email: 'alex.johnson@example.com',
+          phone: '(555) 123-4567',
+          links: [{ platform: 'GitHub', url: 'https://github.com/alexj' }],
+        },
+        education: [
+          {
+            institution: 'Tech College',
+            location: 'City, Country',
+            degreeType: 'M.Sc. Data Science',
+            startDate: '09/2019',
+            endDate: '06/2021',
+            scores: 'GPA: 3.7/4.0',
+          },
+        ],
+        experience: [
+          {
+            companyName: 'Data Analytics Ltd',
+            jobType: 'Data Scientist',
+            location: 'City, Country',
+            startDate: '07/2021',
+            endDate: 'Present',
+            description: 'Analyzed large datasets to drive business decisions.',
+          },
+        ],
+        skills: {
+          languages: ['Python', 'R'],
+          frameworks: ['TensorFlow', 'Pandas'],
+          tools: ['Jupyter', 'Tableau'],
+          databases: ['SQL Server', 'PostgreSQL'],
+        },
+        projects: [
+          {
+            projectName: 'Predictive Analytics Model',
+            technologies: 'Python, Scikit-learn',
+            startDate: '03/2022',
+            endDate: '06/2022',
+            description: 'Built a model to predict customer churn.',
+            features: 'High accuracy, real-time predictions.',
+          },
+        ],
+        certificates: [
+          {
+            name: 'Data Science Professional',
+            link: 'https://example.com/cert',
+            issuedBy: 'Tech Institute',
+          },
+        ],
+        template: 'template3',
+      },
     },
   ];
 
