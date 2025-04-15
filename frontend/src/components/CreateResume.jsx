@@ -17,7 +17,6 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import ResumePreview from './ResumePreview';
-import DownloadButtons from './DownloadButtons';
 import { useLocation } from 'react-router-dom';
 
 const steps = [
@@ -960,7 +959,6 @@ function CreateResume() {
           boxSizing: 'border-box',
         }}
       >
-        <DownloadButtons data={formData} />
         <ResumePreview data={formData} />
       </Box>
     </Box>
