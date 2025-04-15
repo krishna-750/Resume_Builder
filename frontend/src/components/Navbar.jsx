@@ -25,7 +25,6 @@ function Navbar() {
       try {
         const decoded = jwtDecode(token);
         return decoded;
-        console.log(decoded)
       } catch (error) {
         console.error('Error decoding token:', error);
         return {};
