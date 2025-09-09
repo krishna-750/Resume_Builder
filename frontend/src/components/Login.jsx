@@ -10,7 +10,6 @@ import {
   Alert
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-
 function Login() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -73,7 +72,7 @@ function Login() {
           <Typography component="h1" variant="h5" sx={{ mb: 3 }}>
             Sign In
           </Typography>
-          
+
           {error && (
             <Alert severity="error" sx={{ width: '100%', mb: 2 }}>
               {error}
@@ -114,9 +113,6 @@ function Login() {
               Sign In
             </Button>
             <Box sx={{ textAlign: 'center' }}>
-              <Link href="#" variant="body2" sx={{ mr: 2 }}>
-                Forgot password?
-              </Link>
               <Link
                 component="button"
                 variant="body2"

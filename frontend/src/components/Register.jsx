@@ -31,7 +31,7 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
       setError('Please fill in all fields');
       return;
@@ -90,7 +90,7 @@ function Register() {
           <Typography component="h1" variant="h5" sx={{ mb: 3 }}>
             Create Account
           </Typography>
-          
+
           {error && (
             <Alert severity="error" sx={{ width: '100%', mb: 2 }}>
               {error}
@@ -103,7 +103,7 @@ function Register() {
               required
               fullWidth
               id="name"
-              label="Full Name"
+              label="UserName"
               name="name"
               autoComplete="name"
               autoFocus

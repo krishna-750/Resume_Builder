@@ -398,7 +398,13 @@ function CreateResume() {
                 label="Full Name"
                 value={formData.personalInfo.name}
                 onChange={(e) => handleChange('personalInfo', 'name', e.target.value)}
-                InputProps={{ sx: styles.headingFont }}
+                InputProps={{
+                  onInput: (e) => {
+                    const input = e.target;
+                    input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Removes non-alphabetical characters
+                  },
+                  sx: styles.headingFont,
+                }}
                 InputLabelProps={{ sx: styles.bodyFont }}
               />
             </Grid>
@@ -419,7 +425,13 @@ function CreateResume() {
                 label="Phone"
                 value={formData.personalInfo.phone}
                 onChange={(e) => handleChange('personalInfo', 'phone', e.target.value)}
-                InputProps={{ sx: styles.bodyFont }}
+                InputProps={{
+                  onInput: (e) => {
+                    const input = e.target;
+                    input.value = input.value.replace(/[^0-9]/g, ''); // Removes non-numeric characters
+                  },
+                  sx: styles.bodyFont,
+                }}
                 InputLabelProps={{ sx: styles.bodyFont }}
               />
             </Grid>
@@ -434,7 +446,13 @@ function CreateResume() {
                     value={link.platform}
                     onChange={(e) => handleLinkChange(index, 'platform', e.target.value)}
                     sx={{ flex: 1 }}
-                    InputProps={{ sx: styles.bodyFont }}
+                    InputProps={{
+                      onInput: (e) => {
+                        const input = e.target;
+                        input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Removes non-alphabetical characters
+                      },
+                      sx: styles.bodyFont,
+                    }}
                     InputLabelProps={{ sx: styles.bodyFont }}
                   />
                   <TextField
@@ -442,7 +460,16 @@ function CreateResume() {
                     value={link.url}
                     onChange={(e) => handleLinkChange(index, 'url', e.target.value)}
                     sx={{ flex: 2 }}
-                    InputProps={{ sx: styles.bodyFont }}
+                    InputProps={{
+                      onInput: (e) => {
+                        const input = e.target;
+                        input.value = input.value.replace(
+                          /[^a-zA-Z0-9:/.?&=_\-]/g,
+                          ''
+                        );
+                      },
+                      sx: styles.bodyFont,
+                    }}
                     InputLabelProps={{ sx: styles.bodyFont }}
                   />
                   {index > 0 && (
@@ -494,6 +521,13 @@ function CreateResume() {
                       label="Location"
                       value={edu.location}
                       onChange={(e) => handleEducationChange(index, 'location', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
                     />
                   </Grid>
@@ -519,9 +553,16 @@ function CreateResume() {
                     <TextField
                       fullWidth
                       label="Start Date (MM/YYYY)"
-                      placeholder="May 2018"
+                      placeholder="05/2018"
                       value={edu.startDate}
                       onChange={(e) => handleEducationChange(index, 'startDate', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^0-9]/g, ''); // Removes all characters except numbers and '/'
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
                     />
                   </Grid>
@@ -529,9 +570,16 @@ function CreateResume() {
                     <TextField
                       fullWidth
                       label="End Date (MM/YYYY)"
-                      placeholder="June 2022"
+                      placeholder="06/2022"
                       value={edu.endDate}
                       onChange={(e) => handleEducationChange(index, 'endDate', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^0-9]/g, ''); // Removes all non-numeric characters
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
                     />
                   </Grid>
@@ -575,8 +623,16 @@ function CreateResume() {
                       label="Company Name"
                       value={exp.companyName}
                       onChange={(e) => handleExperienceChange(index, 'companyName', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Only alphabetical characters
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
                     />
+
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
@@ -584,8 +640,16 @@ function CreateResume() {
                       label="Job Type"
                       value={exp.jobType}
                       onChange={(e) => handleExperienceChange(index, 'jobType', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Only alphabetical characters
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
                     />
+
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
@@ -797,6 +861,13 @@ function CreateResume() {
                       label="Certificate Name"
                       value={cert.name}
                       onChange={(e) => handleCertificateChange(index, 'name', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Removes non-alphabetical characters
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
                     />
                   </Grid>
@@ -815,8 +886,15 @@ function CreateResume() {
                       label="Issued By"
                       value={cert.issuedBy}
                       onChange={(e) => handleCertificateChange(index, 'issuedBy', e.target.value)}
+                      InputProps={{
+                        onInput: (e) => {
+                          const input = e.target;
+                          input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Removes non-alphabetical characters, including numbers
+                        },
+                        ...textFieldProps,
+                      }}
                       {...textFieldProps}
-                    />
+                    />   
                   </Grid>
                 </Grid>
               </Paper>
@@ -960,7 +1038,7 @@ function CreateResume() {
           boxSizing: 'border-box',
         }}
       >
-        
+
         <DownloadButtons data={formData} />
         <ResumePreview data={formData} />
       </Box>

@@ -26,8 +26,6 @@ function Home() {
       console.log('Fetching user count from http://localhost:5000/user-count');
       try {
         const response = await axios.get('http://localhost:5000/user-count');
-        console.log('Full response:', response);
-        console.log('User count:', response.data.user_count);
         setUserCount(response.data.user_count);
         setShowCount(true);
         console.log('State updated: userCount=', response.data.user_count, 'showCount=true');
@@ -57,13 +55,12 @@ function Home() {
     },
     {
       icon: <DownloadIcon sx={{ fontSize: 40 }} />,
-      title: 'Download & Share',
-      description: 'Download your resume in PDF format and share it with potential employers.',
+      title: 'Easy To Download',
+      description: 'Download your resume in PDF format and Word Format.',
     },
   ];
 
   const handleGetStarted = () => {
-    console.log('Get Started clicked, navigating to /dashboard');
     navigate('/register', { state: { userCount } });
   };
 
@@ -124,15 +121,14 @@ function Home() {
                 sx={{ mt: 2, opacity: 0.9 }}
               >
                 {userCount !== null
-                  ? ` ${userCount} users already creating their resumes!`
-                  : ' many users already creating their resumes!'}
+                  ? ` ${userCount} users already created their resumes!`
+                  : ' many users already created their resumes!'}
               </Typography>
             </Fade>
           )}
         </Container>
       </Paper>
 
-      {/* Features Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Typography variant="h4" align="center" gutterBottom sx={{ mb: 6 }}>
           Why Choose Our Resume Builder?

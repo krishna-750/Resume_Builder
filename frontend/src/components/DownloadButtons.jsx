@@ -52,9 +52,8 @@ function DownloadButtons({ data }) {
               new Paragraph({
                 children: [
                   new TextRun({
-                    text: `${data?.personalInfo?.email || 'Email'} | ${
-                      data?.personalInfo?.phone || 'Phone'
-                    }`,
+                    text: `${data?.personalInfo?.email || 'Email'} | ${data?.personalInfo?.phone || 'Phone'
+                      }`,
                     size: 22,
                   }),
                 ],
